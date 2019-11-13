@@ -83,7 +83,7 @@
             </div>
 
             <div class="chart-wrapper" ng-show="showLastWeekChart">
-                <h4>Last week</h4>
+                <h4>Last week (week = 7 days)</h4>
 
                 <span class="uptime" title="Last 24 hours uptime: {{serviceDetails.status.lastWeek.uptime}} %">
                     {{serviceDetails.status.lastWeek.uptime}}% <span class="caption">uptime</span>
@@ -98,6 +98,25 @@
                 </span>
 
                 <div class="chart" id='chart-last-week'></div>
+
+            </div>
+
+            <div class="chart-wrapper" ng-show="showLastMonthChart">
+                <h4>Last month (month = 30.416 days)</h4>
+
+                <span class="uptime" title="Last 24 hours uptime: {{serviceDetails.status.lastMonth.uptime}} %">
+                    {{serviceDetails.status.lastMonth.uptime}}% <span class="caption">uptime</span>
+                </span>
+
+                <span class="latency" class="downtime" title="AVG response time: {{serviceDetails.status.lastMonth.latency.mean}} milliseconds" class="">
+                    {{serviceDetails.status.lastMonth.latency.mean}} <span class="caption">ms. avg latency</span>
+                </span>
+
+                <span ng-if="serviceDetails.status.lastMonth.downtime" class="downtime" title="Downtime last month">
+                    downtime: <span ms-time="serviceDetails.status.lastMonth.downtime"></span>
+                </span>
+
+                <div class="chart" id='chart-last-month'></div>
 
             </div>
         </div>

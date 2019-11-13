@@ -53,6 +53,7 @@
         var latencyLastHour = data.status.lastHour.latency;
         var latencyLast24Hours = data.status.last24Hours.latency;
         var latencyLastWeek = data.status.lastWeek.latency;
+        var latencyLastMonth = data.status.lastMonth.latency;
 
         var maxLastHour = _.max(latencyLastHour.list, function (item) {
           return item.l;
@@ -63,8 +64,11 @@
         var maxLastWeek = _.max(latencyLastWeek.list, function (item) {
           return item.l;
         });
+        var maxLastMonth = _.max(latencyLastMonth.list, function (item) {
+          return item.l;
+        });
 
-        var max = _.max([maxLastHour.l, maxLast24Hours.l, maxLastWeek.l]);
+        var max = _.max([maxLastHour.l, maxLast24Hours.l, maxLastWeek.l, maxLastMonth.l]);
 
         var charts = [];
         $timeout(function () {
@@ -100,6 +104,19 @@
               latency: latencyLastWeek.list,
               outages: data.status.lastWeek.outages,
               id: '#chart-last-week',
+              size: chartSize,
+              x_format: '%d/%m',
+              max: max
+            }));
+          }
+
+          if (latencyLastMonth.list.length > 1) {
+            $scope.showLastMonthChart = true;
+            charts.push(Charting.render({
+              threshold: data.service.warningThreshold,
+              latency: latencyLastMonth.list,
+              outages: data.status.lastMonth.outages,
+              id: '#chart-last-month',
               size: chartSize,
               x_format: '%d/%m',
               max: max

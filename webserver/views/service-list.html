@@ -70,6 +70,13 @@
                     </a>
                 </td>
 
+                <td class="result-uptime hidden-sm hidden-xs" header-class="'hidden-sm hidden-xs'"
+                    data-title="'last month'" sortable="'status.lastMonth.uptime'">
+                    <a class="name" href="/services/{{row.service.id}}/view">
+                        <span>{{row.status.lastMonth.uptime}}%</span>
+                    </a>
+                </td>
+
                 <td header-class="'hidden-sm hidden-xs'" class="service hidden-sm hidden-xs"
                     data-title="'Service'" sortable="'name'">
                     {{row.service.pingServiceName}}
