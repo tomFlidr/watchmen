@@ -1,7 +1,7 @@
 # watchmen: a service monitor for node.js
 
 [![Build Status](https://secure.travis-ci.org/iloire/watchmen.png?branch=master)](http://travis-ci.org/iloire/watchmen)
-![Node.JS Version](https://img.shields.io/badge/Node.JS->=4.0-brightgreen.svg?style=plastic)
+![Node.JS Version](https://img.shields.io/badge/Node.JS->=4.0–newest-brightgreen.svg?style=plastic)
 ![Redis Version](https://img.shields.io/badge/Redis->=3.0-brightgreen.svg?style=plastic)
 
 - [What is watchmen?](#what-is-watchmen)
