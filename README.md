@@ -46,17 +46,19 @@
 
 ### Requirements
 
-Get redis from [redis.io](http://redis.io/download) and install it.
+Get redis from [redis.io](http://redis.io/download) and install it.  
+(Required version for Windows is 3.0+ from here: https://github.com/microsoftarchive/redis/releases)
 
 ### Installing watchmen
 
 Clone the repo by using
 
-    $ git clone git@github.com:iloire/watchmen.git
+    $ git clone https://github.com/iloire/watchmen.git
 
 or
 
-    $git clone https://github.com/iloire/watchmen.git
+    $ git clone git@github.com:iloire/watchmen.git
+
 
 Then install the required dependencies using ``npm``
 
@@ -65,11 +67,15 @@ Then install the required dependencies using ``npm``
 
 ## Running and stopping watchmen
 
+Open `redis.conf` and configure line 6 with `dir ` - put your current application directory full path.
+
 Make sure you have `redis-server` in your `PATH`. Then you can run watchmen services:
 
     $ redis-server redis.conf
     $ node run-monitor-server.js
     $ node run-web-server.js
+	
+Don't forget to configure running web server without authentication for first time.
 
 ## Development workflow
 
