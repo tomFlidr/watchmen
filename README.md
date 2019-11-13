@@ -47,7 +47,7 @@
 ### Requirements
 
 Get redis from [redis.io](http://redis.io/download) and install it.  
-(Required version for Windows is 3.0+ from here: https://github.com/microsoftarchive/redis/releases)
+(Required Redis version to install on Windows is Redis 3.0+ from here: https://github.com/microsoftarchive/redis/releases)
 
 ### Installing watchmen
 
