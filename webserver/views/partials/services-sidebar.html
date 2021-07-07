@@ -7,7 +7,7 @@
                     <span ng-if="!serviceReport.status.currentOutage" class="up">{{serviceReport.status.last24Hours.uptime}}%</span>
                 </td>
                 <td class="name">
-                    <a href="/services/{{serviceReport.service.id}}/view">
+                    <a href="<%=baseUrl%>services/{{serviceReport.service.id}}/view">
                         {{serviceReport.service.name}}
                     </a>
                 </td>
