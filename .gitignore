@@ -9,3 +9,4 @@ terraform/digital-ocean/*.tfstate
 terraform/digital-ocean/*.tfstate.backup
 .htdigest
 config/env-vars.sh
+config/env-vars.cmd
