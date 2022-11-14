@@ -1,0 +1,14 @@
+[Unit]
+Description=Watchman Monitor Service
+After=network.target remote-fs.target
+
+[Service]
+Type=simple
+User=www
+Group=apache
+
+ExecStart=/var/www/html/watchmen/run-monitor-server.sh
+WorkingDirectory=/var/www/html/watchmen
+
+[Install]
+WantedBy=multi-user.target

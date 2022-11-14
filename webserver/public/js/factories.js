@@ -10,6 +10,8 @@
   var reportCache;
   var pingPluginsCache;
   
+  var baseUrl = document.querySelector('head base').getAttribute('href');
+
   factories.factory('Report', function ($resource, $cacheFactory) {
     reportCache = $cacheFactory('Services');
 
@@ -17,7 +19,7 @@
       reportCache.removeAll();
     }, CACHE_EXPIRATION);
     
-    var Report = $resource('/api/report/services/:id', {id: '@id'}, {
+    var Report = $resource(baseUrl+'api/report/services/:id', {id: '@id'}, {
       'get': { method:'GET', cache: reportCache},
       'query': { method:'GET', isArray:true, cache: reportCache}
     });
@@ -32,7 +34,7 @@
   });
 
   factories.factory('Service', function ($resource) {
-    return $resource('/api/services/:id',
+    return $resource(baseUrl+'api/services/:id',
         {id: '@id'}, {
 
           /**
@@ -40,7 +42,7 @@
            */
           reset: {
             method: 'POST',
-            url: '/api/services/:id/reset'
+            url: baseUrl+'api/services/:id/reset'
           }
 
         });
@@ -48,7 +50,7 @@
 
   factories.factory('PingPlugins', function ($resource, $cacheFactory) {
     pingPluginsCache = $cacheFactory('PingPlugins');
-    return $resource('/api/plugins/:id',
+    return $resource(baseUrl+'api/plugins/:id',
         {id: '@id'}, {
           'query': { method:'GET', isArray:true, cache: pingPluginsCache}
         });

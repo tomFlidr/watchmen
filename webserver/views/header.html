@@ -7,7 +7,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="/">watchmen</a>
+            <a class="navbar-brand" href="<%=baseUrl%>">Watchmen</a>
         </div>
         <div class="navbar-collapse collapse" id="main-nav-bar">
             <ul class="nav navbar-nav navbar-right">
@@ -23,12 +23,12 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a target="_self" href="/logout">Logout <%=user.email%></a></li>
+                        <li><a target="_self" href="<%=baseUrl%>logout">Logout <%=user.email%></a></li>
                     </ul>
                 </li>
                 <% } else { %>
                   <li>
-                      <a target="_self" href="/auth/google">Sign In with Google</a>
+                      <a target="_self" href="<%=baseUrl%>auth/google">Sign In with Google</a>
                   </li>
                 <% } %>
             </ul>
